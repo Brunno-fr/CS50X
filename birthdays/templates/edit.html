@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Aniversário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1> Editar Aniversário</h1>
+        <form action="{{ url_for('edit', id=birthday.id) }}" method="post" class="form-edit">
+            <input type="text" name="name" value="{{ birthday.name }}" required>
+            <input type="number" name="month" value="{{ birthday.month }}" min="1" max="12" required>
+            <input type="number" name="day" value="{{ birthday.day }}" min="1" max="31" required>
+            <button type="submit">Salvar</button>
+            <a href="{{ url_for('index') }}" class="btn-cancel">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

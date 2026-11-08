@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking - Montadores de ET</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container ranking-page">
+        <h1>🏆 Hall da Fama dos Montadores de ET</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Jogador</th>
+                    <th>Tempo (segundos)</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if scores %}
+                    {% for score in scores %}
+                    <tr>
+                        <td>{{ loop.index }}º</td>
+                        <td>{{ score.jogador }}</td>
+                        <td>{{ score.tempo_segundos }}s</td>
+                        <td>{{ score.data_criacao[:10] }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="4">Nenhum recorde ainda. Seja o primeiro! 🦆</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <a href="/" class="btn-voltar">⬅️ Voltar para o Jogo</a>
+    </div>
+</body>
+</html>

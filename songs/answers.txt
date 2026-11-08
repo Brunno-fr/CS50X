@@ -1,0 +1,66 @@
+Question 1: If songs.db contained the 100 most-streamed songs of a listener in 2018, how would you characterize that person's sonic aura?
+
+Answer:
+Based on the data from the 100 most-streamed songs in 2018, we can characterize the listener's sonic aura by analyzing three key metrics:
+
+1. Average Energy: The average energy of all songs gives us an indication of how "energetic" or "calm" the person's playlist is. A high average energy suggests the person prefers more upbeat and intense songs, while low energy indicates a preference for softer, more relaxing music.
+
+2. Average Valence: Valence measures musical positivity. High valence indicates more cheerful, optimistic, and happy songs, while low valence suggests sadder, more melancholic, or darker music.
+
+3. Average Danceability: This metric shows how suitable a song is for dancing. High danceability indicates the person enjoys rhythmic, danceable music, while low danceability suggests a preference for more introspective or calm songs.
+
+Based on these three factors, we could describe the sonic aura as:
+- "Energetic and Cheerful" (if energy and valence are high)
+- "Calm and Reflective" (if energy is low and valence is medium)
+- "Danceable and Optimistic" (if danceability and valence are high)
+- "Intense and Dark" (if energy is high and valence is low)
+
+For example, if the averages are:
+- Energy: 0.75 (high)
+- Valence: 0.70 (high)
+- Danceability: 0.80 (high)
+
+The sonic aura would be: "Danceable, Energetic, and Cheerful" – a person who enjoys upbeat party music and celebratory moments.
+
+---
+
+Question 2: Formulate a hypothesis about why the way you calculated this aura might not be very representative of the listener. What better ways would you propose to calculate this aura?
+
+Answer:
+
+Hypotheses on why this approach might not be representative:
+
+1. Averages Don't Represent Variety: Calculating only the average can mask the listener's musical diversity. For example, a listener might have songs with energy 0.9 and others with energy 0.1, resulting in an average of 0.5, which doesn't represent either extreme well.
+
+2. Emotional Context: The same song can be listened to in different contexts (sadness, happiness, exercise, studying), but the analysis doesn't capture this context. The numbers alone don't tell the full story.
+
+3. Frequency vs. Significance: Listening to a song 100 times by accident (loop) can distort results, causing a single song to have disproportionate weight on the calculated aura.
+
+4. Temporal Factors: The 100 songs might be from different periods of the year, and the person's mood may have changed over time. For example, someone might have listened to sad songs in winter and upbeat songs in summer.
+
+5. Musical Genres: The analysis completely ignores musical genres. Two songs with the same energy can be from completely different genres (rock and pop, for example), affecting the listener's experience in distinct ways.
+
+Better ways to calculate the sonic aura:
+
+1. Cluster Analysis: Instead of using only averages, we could group songs into clusters with similar characteristics and analyze the distribution. This would show whether the listener has varied or consistent preferences.
+
+2. Frequency Weighting: Give more weight to the most listened to songs (top 10, top 20) rather than treating all 100 songs equally. A song listened to 500 times should have more influence than one listened to 5 times.
+
+3. Temporal Analysis: Divide the year into seasons or months and analyze how the aura changes over time. This could reveal seasonal patterns in listener behavior.
+
+4. Include Musical Genres: Add genre analysis to complement the numerical metrics. For example: "Energetic Pop" vs "Calm Rock".
+
+5. Transition Analysis: Study how the listener transitions between songs. For example, whether they listen to songs with increasing or decreasing energy could indicate specific emotional states.
+
+6. Personalized Profile: Create a profile based on comparison with the complete Spotify database, identifying which characteristics are more "unique" to that listener compared to the global average.
+
+7. Keyword Analysis: Extract keywords from song titles and artists to understand themes and contexts (e.g., "love," "party," "sadness," "overcoming").
+
+8. Diversity Metrics: Calculate musical diversity (how different the songs are from each other) to understand whether the listener is eclectic or has very specific preferences.
+
+Conclusion: The simple averages approach is a good starting point, but for a more accurate representation of a listener's sonic aura, it would be necessary to combine multiple analytical techniques, including distribution analysis, frequency weighting, temporal analysis, and consideration of the broader musical context.
+
+---
+
+Final Answer:
+The sonic aura calculated by simple averages of energy, valence, and danceability offers a general but limited view of the listener's musical profile. A more sophisticated approach, considering musical diversity, temporal context, and listening frequency, would provide a much richer and more accurate representation of the user's musical habits and preferences.

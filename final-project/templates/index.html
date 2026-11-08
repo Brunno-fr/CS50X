@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Alien Assembler 🦆👽</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦆 Montando o ET do Patinho 👽</h1>
+            <div class="status-bar">
+                <span>❤️ Vidas: <span id="vidas">3</span></span>
+                <span>⭐ Peças: <span id="pecas">0</span>/5</span>
+                <span>⏱️ Tempo: <span id="tempo">0</span>s</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- Canvas do jogo -->
+            <canvas id="gameCanvas" width="800" height="450"></canvas>
+
+            <!-- Input para nome do jogador (aparece no fim) -->
+            <div id="modal" class="modal hidden">
+                <div class="modal-content">
+                    <h2 id="modalTitulo">🎉 Você montou o ET!</h2>
+                    <p id="modalTexto">Seu tempo foi incrível!</p>
+                    <label for="nomeJogador">Digite seu nome para salvar o recorde:</label>
+                    <input type="text" id="nomeJogador" placeholder="Seu nome" maxlength="20">
+                    <button id="btnSalvar">Salvar Recorde 🏆</button>
+                    <button id="btnReiniciar">Jogar Novamente 🔄</button>
+                    <a href="/ranking" target="_blank">Ver Ranking 📊</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script do Jogo -->
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+</body>
+</html>

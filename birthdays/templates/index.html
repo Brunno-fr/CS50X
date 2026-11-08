@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversários</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📅 Aniversários dos Amigos</h1>
+
+        <!-- Formulário para adicionar novo aniversário -->
+        <form action="/" method="post" class="form-add">
+            <input type="text" name="name" placeholder="Nome" required>
+            <input type="number" name="month" placeholder="Mês (1-12)" min="1" max="12" required>
+            <input type="number" name="day" placeholder="Dia (1-31)" min="1" max="31" required>
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <!-- Tabela de aniversários -->
+        {% if birthdays %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in birthdays %}
+                    <tr>
+                        <td>{{ b.name }}</td>
+                        <td>{{ b.day }}/{{ b.month }}</td>
+                        <td class="actions">
+                            <a href="{{ url_for('edit', id=b.id) }}" class="btn-edit">Editar</a>
+                            <form action="{{ url_for('delete', id=b.id) }}" method="post" style="display:inline;">
+                                <button type="submit" class="btn-delete" onclick="return confirm('Tem certeza?')">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>Nenhum aniversário cadastrado ainda.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

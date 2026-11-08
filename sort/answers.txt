@@ -1,0 +1,14 @@
+sort1 uses: Bubble Sort
+
+How do you know?
+Bubble Sort is much faster on an already sorted list than on a reversed list because it can stop early when no swaps are needed. sort1 showed this behavior.
+
+sort2 uses: Merge Sort
+
+How do you know?
+Merge Sort has O(n log n) performance regardless of the initial order of the data. sort2 took nearly the same amount of time for sorted and reversed inputs.
+
+sort3 uses: Selection Sort
+
+How do you know?
+Selection Sort always scans the remaining unsorted portion of the array, so its running time is nearly the same whether the input is sorted or reversed. sort3 showed almost identical times in both cases.

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // Código JavaScript será inserido junto com html
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <!-- PARTE 1: Múltipla Escolha -->
+        <div class="section">
+            <h2>Parte 1: Múltipla Escolha</h2>
+            <hr>
+            <h3>Qual é a capital do Brasil?</h3>
+            <!-- Cada botão tem data-correct="true" apenas para a resposta correta -->
+            <button class="choice-btn" data-correct="false">São Paulo</button>
+            <button class="choice-btn" data-correct="false">Rio de Janeiro</button>
+            <button class="choice-btn" data-correct="true">Brasília</button>
+            <button class="choice-btn" data-correct="false">Salvador</button>
+            <p class="feedback" id="mc-feedback"></p>
+        </div>
+
+        <!-- PARTE 2: Resposta Livre -->
+        <div class="section">
+            <h2>Parte 2: Resposta Livre</h2>
+            <hr>
+            <!-- NOVA PERGUNTA SOBRE HARVARD -->
+            <h3>Em qual país foi fundada a Universidade de Harvard?</h3>
+            <input type="text" id="fr-input" placeholder="Digite sua resposta...">
+            <button id="fr-submit">Confirmar</button>
+            <p class="feedback" id="fr-feedback"></p>
+        </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+
+    // --- PARTE 1: Múltipla Escolha ---
+    const choiceButtons = document.querySelectorAll('.choice-btn');
+    const mcFeedback = document.getElementById('mc-feedback');
+
+    choiceButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Desabilita todos os botões para evitar múltiplas respostas
+            choiceButtons.forEach(btn => btn.disabled = true);
+
+            // Verifica se este botão é o correto (via data-correct)
+            if (this.dataset.correct === 'true') {
+                this.style.backgroundColor = 'green';
+                mcFeedback.textContent = 'Correto!';
+                mcFeedback.style.color = 'green';
+            } else {
+                this.style.backgroundColor = 'red';
+                mcFeedback.textContent = 'Incorreto';
+                mcFeedback.style.color = 'red';
+            }
+        });
+    });
+
+    // --- PARTE 2: Resposta Livre ---
+    const frInput = document.getElementById('fr-input');
+    const frSubmit = document.getElementById('fr-submit');
+    const frFeedback = document.getElementById('fr-feedback');
+
+    // RESPOSTA CORRETA (país de fundação de Harvard)
+    const correctAnswer = 'estados unidos';  // aceita "Estados Unidos" (case insensitive)
+
+    frSubmit.addEventListener('click', function() {
+        const userAnswer = frInput.value.trim();
+
+        if (userAnswer === '') {
+            frFeedback.textContent = 'Por favor, digite uma resposta.';
+            frFeedback.style.color = 'orange';
+            return;
+        }
+
+        // Comparação ignorando maiúsculas/minúsculas
+        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+            frInput.style.backgroundColor = 'green';
+            frFeedback.textContent = 'Correto!';
+            frFeedback.style.color = 'green';
+        } else {
+            frInput.style.backgroundColor = 'red';
+            frFeedback.textContent = 'Incorreto';
+            frFeedback.style.color = 'red';
+        }
+
+        // Desabilita o campo e o botão após a resposta
+        frInput.disabled = true;
+        frSubmit.disabled = true;
+    });
+});
+    </script>
+</body>
+</html>

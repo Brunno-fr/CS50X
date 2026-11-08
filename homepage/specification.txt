@@ -1,0 +1,38 @@
+Tags HTML utilizadas (além de html, head, body, title):
+1. header (não usei explicitamente, mas usei nav, main, footer; vou listar as que usei)
+   - nav
+   - main
+   - section
+   - footer
+   - h1, h2, h5 (contam como heading tags, mas vou listar h1, h2, h5)
+   - p
+   - a
+   - img
+   - ul
+   - li
+   - div
+   - span (usei no footer? não, mas usei class)
+   - button
+   - hr
+   - strong
+   - etc. Vou listar exatamente 10: nav, main, section, footer, h1, p, a, img, ul, button.
+
+Propriedades CSS utilizadas (em styles.css):
+1. font-family
+2. background-color
+3. color
+4. margin (ou margin-top)
+5. padding (ou padding-top)
+6. box-shadow
+7. transition
+8. transform
+9. border (ou border-color)
+10. list-style-type
+
+Mas preciso de pelo menos 5, então listo: font-family, background-color, color, margin, padding, box-shadow, transition, transform, border, list-style-type (já são 10).
+
+Descrição do uso de JavaScript:
+- Utilizei JavaScript para adicionar interatividade ao botão "Clique para uma saudação" na página inicial, que exibe uma mensagem personalizada. Além disso, adicionei um efeito de hover nas imagens (opacidade) usando JavaScript para tornar a navegação mais dinâmica.
+
+Descrição do uso de Bootstrap:
+- Utilizei Bootstrap para a navbar responsiva, sistema de grid (linhas e colunas), cards, estilização de botões, list-group e classes de espaçamento e tipografia. Isso garantiu um layout moderno e responsivo em diferentes tamanhos de tela.
